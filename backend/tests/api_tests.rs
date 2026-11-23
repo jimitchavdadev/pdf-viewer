@@ -19,8 +19,10 @@ mod tests {
 
     #[tokio::test]
     async fn test_backend_health_endpoint() {
+        dotenvy::dotenv().ok();
+        let port = env::var("PORT").unwrap_or_else(|_| "8088".to_string());
         let client = reqwest::Client::new();
-        if let Ok(res) = client.get("http://127.0.0.1:8080/health").send().await {
+        if let Ok(res) = client.get(format!("http://127.0.0.1:{}/health", port)).send().await {
             assert_eq!(res.status(), 200);
             let body: serde_json::Value = res.json().await.unwrap();
             assert_eq!(body["status"], "healthy");
@@ -31,8 +33,10 @@ mod tests {
 
     #[tokio::test]
     async fn test_documents_api() {
+        dotenvy::dotenv().ok();
+        let port = env::var("PORT").unwrap_or_else(|_| "8088".to_string());
         let client = reqwest::Client::new();
-        if let Ok(res) = client.get("http://127.0.0.1:8080/api/documents").send().await {
+        if let Ok(res) = client.get(format!("http://127.0.0.1:{}/api/documents", port)).send().await {
             assert_eq!(res.status(), 200);
             let body: serde_json::Value = res.json().await.unwrap();
             assert!(body.is_array());

@@ -1,11 +1,17 @@
 import { Annotation, Comment, CommentAttachment, Document, ReadingProgress } from '@/types';
 
 function getApiBase(): string {
+  if (process.env.NEXT_PUBLIC_API_URL) {
+    return process.env.NEXT_PUBLIC_API_URL;
+  }
   if (typeof window !== 'undefined') {
+    if (window.location.hostname === 'pdf.treezur.com') {
+      return 'https://pdf-api.treezur.com/api';
+    }
     const host = window.location.hostname;
     return `http://${host}:8080/api`;
   }
-  return process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8080/api';
+  return 'http://127.0.0.1:8080/api';
 }
 
 export const api = {

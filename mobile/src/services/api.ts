@@ -4,7 +4,9 @@ import { Platform } from 'react-native';
 // Auto-select host:
 // - Android Emulator: 10.0.2.2 maps to host machine localhost
 // - iOS Simulator / Web: localhost
-const DEFAULT_HOST = Platform.OS === 'android' ? 'http://10.0.2.2:8080/api' : 'http://127.0.0.1:8080/api';
+const DEFAULT_HOST =
+  process.env.EXPO_PUBLIC_API_URL ||
+  (Platform.OS === 'android' ? 'https://pdf-api.treezur.com/api' : 'https://pdf-api.treezur.com/api');
 
 export const API_BASE = DEFAULT_HOST;
 
