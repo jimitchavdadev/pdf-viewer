@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Base Theme Styles */
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Light Mode (Crisp Natural) */
+.theme-light {
+  --bg-app: #F8F9FA;
+  --bg-surface: #FFFFFF;
+  --bg-paper: #FFFFFF;
+  --text-main: #18191B;
+  --text-muted: #64748B;
+  --border-subtle: #E2E8F0;
+  --accent-color: #2563EB;
+  --canvas-filter: none;
+}
+
+/* Sepia Mode (Warm Book Paper - Zero Eye Strain) */
+.theme-sepia {
+  --bg-app: #EDE3D2;
+  --bg-surface: #F5ECDD;
+  --bg-paper: #F8F1E5;
+  --text-main: #342823;
+  --text-muted: #7E6C63;
+  --border-subtle: #DECDB8;
+  --accent-color: #B45309;
+  --canvas-filter: sepia(30%) brightness(96%) contrast(98%);
+}
+
+/* Night Mode (OLED / Soft Charcoal) */
+.theme-dark {
+  --bg-app: #0F1012;
+  --bg-surface: #18191C;
+  --bg-paper: #1E2023;
+  --text-main: #E2E4E8;
+  --text-muted: #949BA4;
+  --border-subtle: #2B2E33;
+  --accent-color: #38BDF8;
+  --canvas-filter: invert(88%) hue-rotate(180deg) contrast(90%);
+}
+
+/* Smooth Canvas Scrolling & Touch Optimization */
+.pdf-viewport {
+  touch-action: pan-x pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Custom Eye-Friendly Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 140, 140, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 140, 140, 0.45);
+}

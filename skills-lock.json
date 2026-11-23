@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "skills": {
+    "design-system": {
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "commit": "281e4537afb11333ac9947783779aaf314ebfbf2",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/design-system/SKILL.md",
+      "computedHash": "9efdc106c73d8d298b5a90d55c56995840a37f754fb9d498d14e6562bdaadc23"
+    },
+    "supabase-server": {
+      "source": "supabase/server",
+      "commit": "b0fcc4c266391a9549c4f1dbf16dfd336316c87b",
+      "sourceType": "github",
+      "skillPath": "skills/supabase-server/SKILL.md",
+      "computedHash": "9a560aef83b25cbd6aa1c4f77dcdad7c771014d7ba30f64811b81516477ead12"
+    },
+    "system-design": {
+      "source": "wondelai/skills",
+      "commit": "c37678106e63ef1c5472d848fb3d8b8c5b33fafe",
+      "sourceType": "github",
+      "skillPath": "system-design/SKILL.md",
+      "computedHash": "4f29961f17cc7f5520383d27d66ad32ff5ce86d7f74b92b2a41536d7338b6290"
+    }
+  }
+}
